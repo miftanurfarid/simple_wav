@@ -1,5 +1,5 @@
 import numpy as np
-
+from scipy.io import wavfile
 fs = 16e3
 t = np.arange(0,0.25,1/fs)
 c = np.sin(2*np.pi*262*t)
@@ -29,5 +29,4 @@ gundul_pacul = np.append(gundul_pacul, b)
 gundul_pacul = np.append(gundul_pacul, g)
 gundul_pacul = np.append(gundul_pacul, zeros)
 gundul_pacul = np.append(gundul_pacul, zeros)
-from scipy.io import wavfile
 wavfile.write('file1.wav', int(fs), gundul_pacul.astype(np.float32))
